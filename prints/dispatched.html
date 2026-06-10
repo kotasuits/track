@@ -655,11 +655,11 @@
             const slicedData = reversedData.slice(0, limit);
 
             slicedData.forEach(row => {
-                let dispAddress = row.address || row.Address || '';
-                let dispName = row.name || row.Name || '';
-                let dispPhone = row.phone || row.Phone || '';
-                let dispAwb = row.awb || row.AWB || '';
-                let dispPkgId = row.pkgId || row.pkg_id || row.pkgid || row.packageId || row.packageID || row.PackageID || '';
+                let dispAddress = String(row.address || row.Address || '');
+                let dispName = String(row.name || row.Name || '');
+                let dispPhone = String(row.phone || row.Phone || '');
+                let dispAwb = String(row.awb || row.AWB || '');
+                let dispPkgId = String(row.pkgId || row.pkg_id || row.pkgid || row.packageId || row.packageID || row.PackageID || '');
 
                 // Fallback: If phone is empty, try to extract it from the address string
                 if (!dispPhone && dispAddress) {
